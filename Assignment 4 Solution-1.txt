@@ -1,0 +1,331 @@
+#include <iostream>
+using namespace std;
+
+// ======== Assignment 4 Solution ==========
+
+/*
+1.
+Write a program to read elements in a matrix 
+and find the sum of main diagonal
+(major diagonal) elements of the matrix.
+Input array elements:
+1 2 3
+4 5 6
+7 8 9
+Output
+Sum of main diagonal elements = 15
+
+*/
+
+/*
+int main() {
+	int arr[3][3], sum = 0;
+	cout << "Enter a 3x3 Matrix : \n";
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			cin >> arr[i][j];
+			if (i == j) {
+				sum += arr[i][j];
+			}
+		}
+	}
+
+	cout << "Sum of main diagonal = " << sum << endl;
+}
+*/
+
+//======================================
+/*
+2.
+
+Write a program to read elements in two 
+matrices and add elements of both
+matrices.
+Input
+Input elements in 3x3 matrix1:
+1 2 3
+4 5 6
+7 8 9
+Input elements in 3x3 matrix2:
+9 8 7
+6 5 4
+3 2 1
+Output
+Sum of both matrix =
+10 10 10
+10 10 10
+10 10 10
+
+*/
+
+/*
+int main() {
+
+	int arr1[3][3], arr2[3][3], arr3[3][3];
+	cout << "Input elements for 3x3 matrix1: \n";
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			cin >> arr1[i][j];
+		}
+	}
+	
+	cout << "Input elements for 3x3 matrix2: \n";
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			cin >> arr2[i][j];
+		}
+	}
+	
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			arr3[i][j] = arr1[i][j] + arr2[i][j];
+			cout << arr3[i][j] << " ";
+		}
+		cout << endl;
+	}
+}
+*/
+
+//======================================
+/*
+3.
+
+Write a program to read elements in a matrix and find the sum of elements of
+each row of the matrix.
+Input elements in array:
+1 2 3
+4 5 6
+7 8 9
+Output
+Sum of row 1 = 6
+Sum of row 2 = 15
+Sum of row 3 = 24
+
+*/
+
+/*
+int main() {	
+
+	int arr[3][3];
+	cout << "Input 3x3 matrix:\n ";
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			cin >> arr[i][j];
+		}
+	}
+	
+	for (int i = 0; i < 3; i++) {
+		int sum = 0;
+		for (int j = 0; j < 3; j++) {
+			sum += arr[i][j];
+		}
+		cout << "Sum of row " << i 
+			 << " = " << sum << endl; 
+	}
+
+}
+*/
+
+//======================================
+/*
+4.
+
+Create a void function, take an integer 
+then print it then call this method in main.
+
+*/
+
+/*
+
+void print(int number) {
+	cout << number << endl;
+}
+
+int main() {
+	int num;
+	cin >> num;
+	print(num);
+}
+
+*/
+
+//======================================
+/*
+5.
+
+Create a function, take three integers then 
+return the average as float value then
+call this method in main.
+
+*/
+
+/*
+
+float average(int num1, int num2, int num3) {
+	return (num1 + num2 + num3) / 3.0;
+}
+
+int main() {
+	int num1, num2, num3;
+	cin >> num1 >> num2 >> num3;
+	cout << average(4, 4, 6);
+}
+
+*/
+
+//======================================
+/*
+6.
+
+Create a function, take an integer then 
+return true if this number is prime
+otherwise return false
+
+*/
+
+/*
+
+
+bool isPrime(int num) {
+	int count = 0;
+	for (int i = 1; i <= num; i++) {
+		if (num % i == 0)
+			count++;
+	}
+	if (count == 2)
+		return true;
+	else
+		return false;
+}
+
+int main() {
+	int num;
+	cin >> num;
+	if (isPrime(num)) 
+		cout << "Prime\n";
+	else 
+		cout << "NOT prime\n";
+}
+
+*/
+
+//======================================
+/*
+7.
+
+Write a function to find a cube of a 
+given number Input any number: 5
+Output
+Cube of 5 = 125
+
+*/
+
+/*
+
+int cubeOfNumber(int num) {
+	cout << "Cube of " << num << " = ";
+	return num * num * num;
+	
+}
+
+int main() {
+	int num;
+	cin >> num;
+	cout << cubeOfNumber(num);
+}
+
+*/
+
+//======================================
+/*
+8. 
+
+Write a program to input radius of circle 
+from user and find diameter,circumference 
+and area of the given circle using function.
+
+Input radius: 10
+Output
+Diameter = 20 units
+Circumference = 62.83 units
+Area = 314.16 sq. units
+
+*/
+
+/*
+
+void circleInfo(double radius) {
+	cout << "Diameter = " << radius * 2 << " units" << endl;
+	cout << "Circumference = " << 2 * 3.14 * radius << " units" << endl;
+	cout << "Area = " << 3.14 * radius * radius << " units" << endl;	
+}
+
+int main() {
+	double rad;
+	cout << "Input a radius: \n";
+	cin >> rad;
+
+	circleInfo(rad);
+}
+
+*/
+	 
+//======================================
+/*
+9. 
+
+create void function to take number and 
+print all divisors of number
+
+*/
+
+/*
+
+void divisors(int num) {
+	for (int i = 1; i < num; i++) {
+		if (num % i == 0) 
+			cout << i << " ";
+	}
+
+}	
+
+int main() {
+	int num;
+	cout << "Input a number: \n";
+	cin >> num;
+	divisors(num);
+}
+
+*/
+ 
+//======================================
+/*
+10. 
+
+create function to take number and return 
+true if this number can divide by 3 and 4
+
+*/
+
+/*
+
+bool dividedBy3And4(int num) {
+	if (num % 3 == 0 && num % 4 == 0) 
+		return true;
+	else
+		return false;
+
+}	
+
+int main() {
+	int num;
+	cout << "Input Number: ";
+	cin >> num;
+	if (dividedBy3And4(num)) 
+		cout << num << " can be divided by 3 and 4\n";
+	else 
+		cout << num << " can't be divided by 3 and 4\n";
+}
+
+*/
+

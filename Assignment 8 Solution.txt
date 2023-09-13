@@ -1,0 +1,269 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+//========== Assignment 8 Solution =========
+/*
+Template Tasks:
+Task 1:
+Create function take 2 params of any type 
+then return the max (Template)
+*/
+
+/*
+template <class T>
+T maxOf2(T number1, T number2) {
+	if (number1 > number2) 
+		return number1;
+	return number2;
+}
+int main() {
+	int number1, number2;
+	cout << "Enter Two Numbers : ";
+	cin >> number1 >> number2;
+	cout << "Max : " << maxOf2<int>(number1, number2);
+}
+*/
+
+//==================================================
+
+/*
+Task 2:
+Create function take 2 params of any type then
+swap them and pass data by parameters (Template)
+*/
+
+/*
+template <class T>
+void Swap(T &number1, T &number2) {
+	T temp = number1;
+	number1 = number2;
+	number2 = temp;
+}
+int main() {
+	int number1, number2;
+	cout << "Enter Two Numbers : ";
+	cin >> number1 >> number2;
+	cout << "Before swap : \n";
+	cout << "number 1: " << number1 << '\t' << "number 2 : " << number2 << endl;
+	Swap<int>(number1, number2);
+	cout << "After swap : \n";
+	cout << "number 1: " << number1 << '\t' << "number 2 : " << number2 << endl;
+}
+*/
+
+//==================================================
+
+/*
+Task 3:
+Create Calculator class contains 2 data members with the same template data
+type and contains 4 methods add (), subtract (), multiply () and divide ()
+*/
+
+/*
+template <class t>
+class calculator{
+public:
+	static t add(t number1, t number2) {
+		return number1 + number2;
+	}
+	static t subtract(t number1, t number2) {
+		return number1 - number2;
+	}
+	static t multiply(t number1, t number2) {
+		return number1 * number2;
+	}
+	static t divide(t number1, t number2) {
+		return number1 / number2;
+	}
+};
+int main() {
+	int number1, number2;
+	cout << "enter two number : ";
+	cin >> number1 >> number2;
+	cout << "summation =  " << calculator<int>::add(number1, number2) << endl;
+	cout << "subtract  =  " << calculator<int>::subtract(number1, number2) << endl;
+	cout << "multiply  =  " << calculator<int>::multiply(number1, number2) << endl;
+	cout << "division  =  " << calculator<int>::divide(number1, number2) << endl;
+	
+}
+*/
+ 
+//==================================================
+
+/*
+Task 4:
+Vehicle, Truck and Bus Task:
+*/
+
+/*
+class Vehicle {
+private:
+	//Attributes:
+	string model, registrationNumber;
+	int speed;
+	double fuelCapacity, fuelConsumption;
+public:
+	//Constructor:
+	Vehicle(string model, string registrationNumber, int speed, double fuelCapacity, double fuelConsumption) {
+		this->model = model;
+		this->registrationNumber = registrationNumber;
+		this->fuelCapacity = fuelCapacity;
+		this->speed = speed;
+		this->fuelConsumption = fuelConsumption;
+	}
+	//Setters:
+	void setModel(string model) {
+		this->model = model;
+	}
+	void setRegistrationNumber(string registrationNumber) {
+		this->registrationNumber = registrationNumber;
+	}
+	void setFuelCapacity(double fuelCapacity) {
+		this->fuelCapacity = fuelCapacity;
+	}
+	void setSpeed(int speed) {
+		this->speed = speed;
+	}
+	void setFuelConsumption(double fuelConsumption) {
+		this->fuelConsumption = fuelConsumption;
+	}
+
+	//Getters:
+	string getModel() {
+		return model;
+	}
+	string getRegistrationNumber() {
+		return registrationNumber;
+	}
+	int getSpeed() {
+		return speed;
+	}
+	double getFuelConsumption() {
+		return fuelConsumption;
+	}
+	double getFuelCapacity() {
+		return fuelCapacity;
+	}
+
+	//Methods:
+	double fuelNeeded(double distance) {
+		return fuelConsumption / distance;
+	}
+	double distanceCovered(int time) {
+		return (double) speed / time;
+	}
+	virtual void display() = 0;
+};
+
+class Truck : Vehicle {
+private:
+	double cargoWeightLimit;
+public:
+
+	Truck(string model, string registrationNumber, int speed, double fuelCapacity, double fuelConsumption, double cargoWeightLimit) :
+		Vehicle(model, registrationNumber, speed, fuelCapacity, fuelConsumption){
+		this->cargoWeightLimit = cargoWeightLimit;
+	}
+
+	void setCargoWeightLimit(double cargoWeightLimit) {
+		this->cargoWeightLimit = cargoWeightLimit;
+	}
+
+	double getCargoWeightLimit() {
+		return cargoWeightLimit;
+	}
+
+	void display() {
+		cout << "Vehicle model: " << getModel() << endl;
+		cout << "Registration number: " << getRegistrationNumber() << endl;
+		cout << "Vehicle speed: " << getSpeed() << endl;
+		cout << "Fuel capacity: " << getFuelCapacity() << endl;
+		cout << "Fuel consumption: " << getFuelConsumption() << endl;
+		cout << "Cargo Weight Limit : " << cargoWeightLimit << endl;
+	}
+};
+
+class Bus : Vehicle{
+private:
+	int numberOfPassengers;
+public:
+	Bus(string model, string registrationNumber, int speed, double fuelCapacity, double fuelConsumption, int numberOfPassengers) :
+		Vehicle(model, registrationNumber, speed, fuelCapacity, fuelConsumption) {
+		this->numberOfPassengers = numberOfPassengers;
+	}
+
+	void setNumberOfPassengers(int numberOfPassengers) {
+		this->numberOfPassengers = numberOfPassengers;
+	}
+	int getNumberOfPassengers() {
+		return numberOfPassengers;
+	}
+
+	void display() {
+		cout << "Vehicle model: " << getModel() << endl;
+		cout << "Registration number: " << getRegistrationNumber() << endl;
+		cout << "Vehicle speed: " << getSpeed() << endl;
+		cout << "Fuel capacity: " << getFuelCapacity() << endl;
+		cout << "Fuel consumption: " << getFuelConsumption() << endl;
+		cout << "Number Of Passengers : " << numberOfPassengers << endl;
+	}
+};
+
+int main() {
+	Truck t("Buggati", "498b", 220, 70, 33, 44);
+	t.display();
+	cout << "======================================\n";
+
+	Bus b("BMW", "157we", 250, 310, 22, 200);
+	b.display();
+	cout << "======================================\n";
+	return 0;
+}
+*/
+
+//==================================================
+
+/*
+Task 5:
+Create divide function which take (int x, int y) and return y/x
+Then solve the case of (y=0) by throw your defined exception,
+And also solve the case of (y<0) by throw another defined exception
+*/
+
+/*
+class CantDivideByZero : public exception {
+public:
+	const char* what() const throw() {
+		return "can't divide by zero";
+	}
+};
+
+class DivisorCantBeLessThanZero : public exception {
+public:
+	const char* what() const throw() {
+		return "can't divided by less than zero";
+	}
+};
+
+int divide(int number1, int number2) {
+	if (number2 == 0)
+		throw CantDivideByZero();
+	else if (number2 < 0)
+		throw DivisorCantBeLessThanZero();
+	return number1 / number2;
+}
+
+int main() {
+	int number1, number2;
+	cout << "Enter Two Number : ";
+	cin >> number1 >> number2;
+
+	try {
+		cout << divide(number1, number2);
+	}
+	catch (exception& e) {
+		cout << e.what();
+	}
+}
+*/

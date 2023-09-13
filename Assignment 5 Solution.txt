@@ -1,0 +1,254 @@
+#include <iostream>
+using namespace std;
+
+// ======== Assignment 5 Solution ==========
+
+/*
+1- Write a program to print all elements 
+   of an array using the function.
+Input
+Input elements: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+Output
+Array elements: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+*/
+
+/*
+void printArray(int arr[], int size) {
+	for (int i = 0; i < size; i++) {
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+}
+	
+int main() {
+	int arr[10];
+	cout << "Enter Element of Array: ";
+	for (int i = 0; i < 10; i++) {
+		cin >> arr[i];
+	}
+	printArray(arr, 7);
+}
+*/
+//=================================================================================
+
+/*
+2- Write a program to find the sum of array
+   elements using the function.
+	Input array elements: 
+	1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+	Output Sum of array: 55
+*/
+
+/*
+int sumOfArray(int arr[], int size) {
+	int sum = 0;
+	for (int i = 0; i < size; i++) {
+		sum += arr[i];
+	}
+	return sum;
+}
+
+int main() {
+	int arr[10];
+	cout << "Enter Element of Array: ";
+	for (int i = 0; i < 10; i++) {
+		cin >> arr[i];
+	}
+	cout << sumOfArray(arr, 10);
+}
+*/
+
+
+//=================================================================================
+
+/*
+3- Write a function takes a matrix then 
+   return the sum of main diagonal
+   (major diagonal) elements of the matrix.
+	Input
+	Input array elements:
+	1 2 3
+	4 5 6
+	7 8 9
+	Output  15
+*/
+
+/*
+int mainDiagonalOfArray(int arr[3][3]) {
+	int sum = 0;
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			if (i == j) sum += arr[i][j];
+		}
+	}
+	return sum;
+}
+
+int main() {
+	int arr[3][3];
+	cout << "Enter Element of Array: ";
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			cin >> arr[i][j];
+		}
+	}
+	cout << mainDiagonalOfArray(arr);
+}
+*/
+
+//=================================================================================
+
+/*
+4- Write a function takes string then 
+   return the most repeated char
+	Input aaabca
+	Output a
+*/
+
+/*
+char mostRepeated(string word) {
+	int count = 0, mx = INT_MIN, index = 0;
+	//aaaammmmmmm
+	for (int i = 0; i < word.length(); i++) {
+		count = 0;
+		for (int j = 0; j < word.length(); j++) {
+			if (word[i] == word[j]) 
+				count++;
+		}
+		if (count > mx) {
+			mx = count;
+			index = i;
+		}
+	}
+	return word[index];
+}
+
+int main() {
+	string word;
+	cout << "Enter word : ";
+	cin >> word;
+	cout << "Most repeated char : " << mostRepeated(word);
+}
+*/
+
+//=================================================================================
+
+/*
+5- Write a function receive string 
+   and convert it to lowercase
+	Input:   AbCD
+	Output: abcd
+*/
+
+/*
+void toLower(string &word) {
+	for (int i = 0; i < word.length(); i++) {
+		if (word[i] >= 'A' && word[i] <= 'Z') {
+			word[i] += 32;
+		}
+	}
+}
+
+int main() {
+	string word;
+	cout << "Before : ";
+	cin >> word;
+	toLower(word);
+	cout << "After : ";
+	cout << word;
+}
+*/
+
+//=================================================================================
+
+/*
+6- Write a function to check all 
+   chars are digits or not
+	input : 12354
+	Output: true
+	Input: a123
+	Output: false
+*/
+
+/*
+bool isDig(string s) {
+	bool isDi = true;
+	for (int i = 0; i < s.size(); i++) {
+		if (!(s[i] >='0' && s[i] <='9')) {
+			isDi = false;
+			break;
+		}
+	}
+	return isDi;
+}
+
+int main() {
+	string word;
+	cout << "Enter word you want to check : ";
+	cin >> word;
+	if (isDig(word))cout << "true";
+	else cout << "false";
+}
+*/
+
+//=================================================================================
+
+/*
+7- Write a Function to reverse int 
+   using recursion
+	input : 5324
+	Output:4235
+*/
+
+/*
+void reverse(int number) {
+	if (number == 0) {
+		return;
+	}
+	else {
+		cout << number % 10;
+		reverse(number / 10);
+	}
+}
+
+int main() {
+	int number;
+	cout << "Enter Number: ";
+	cin >> number;
+	reverse(number);
+}
+*/
+
+//=================================================================================
+
+/*
+8- Write a Function to return 
+	the max digit in int
+	Input:5234
+	Output: 5
+*/
+
+/*
+int maxDigit(int number) {
+	int mx = INT_MIN, digit;
+	while (number > 0){
+		digit = number % 10;
+		if (digit > mx) {
+			mx = digit;
+		}
+		number /= 10;
+	}
+	return mx;
+}
+
+int main() {
+	int number;
+	cout << "Enter Number : ";
+	cin >> number;
+	cout << "Max digit : " << maxDigit(number) << endl;
+}
+*/
+
+
+
+

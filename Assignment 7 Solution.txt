@@ -1,0 +1,662 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+//============= Assignment 7 Solution =================
+
+/*
+//==================== Task 1 ========================
+
+//== Vehicle Class ==
+
+class Vehicle {
+	//Attributes:
+protected:
+	string model, registrationNumber;
+	int speed;
+	double fuelCapacity, fuelConsumption;
+
+public:
+	//Constructors:
+	Vehicle() {
+		speed = fuelCapacity = fuelConsumption = 0;
+	}
+	Vehicle(string m, string rn, int s, double fc, double fcon) {
+		model = m;
+		registrationNumber = rn;
+		fuelCapacity = fc;
+		speed = s;
+		fuelConsumption = fcon;
+
+	}
+
+	//Setters:
+	void setModel(string m) {
+		model = m;
+	}
+	void setRegistrationNumber(string rn) {
+		registrationNumber = rn;
+	}
+	void setFuelCapacity(double fc) {
+		fuelCapacity = fc;
+	}
+	void setSpeed(int speed) {
+		speed = speed;
+	}
+	void setFuelConsumption(double fcon) {
+		fuelConsumption = fcon;
+	}
+
+	//Getters:
+	string getModel() {
+		return model;
+	}
+	string getRegistrationNumber() {
+		return registrationNumber;
+	}
+	int getSpeed() {
+		return speed;
+	}
+	double getFuelConsumption() {
+		return fuelConsumption;
+	}
+	double getFuelCapacity() {
+		return fuelCapacity;
+	}
+
+	//Methods:
+	double fuelNeeded(double distance) {
+		return fuelConsumption / distance;
+	}
+	double distanceCovered(int time) {
+		return (double) speed / time;
+	}
+	void display() {
+		cout << "Vehicle model: " << model << endl;
+		cout << "Registration number: " << registrationNumber << endl;
+		cout << "Vehicle speed: " << speed << endl;
+		cout << "Fuel capacity: " << fuelCapacity << endl;
+		cout << "Fuel consumption: " << fuelConsumption << endl;
+	}
+};
+
+//== Truck Class ==
+
+class Truck : public Vehicle {
+private:
+	//Attributes:
+	double cargoWeightLimit;
+
+public:
+	//Constructors:
+	Truck() {
+		cargoWeightLimit = 0;
+	}
+	Truck(string m, string rn, int s, double fc, double fcon, double w) :
+		Vehicle(m, rn, s, fc, fcon)
+	{
+		cargoWeightLimit = w;
+	}
+
+	//Setters:
+	void setCargoWeightLimit(double w) {
+		cargoWeightLimit = w;
+	}
+
+	//Getters:
+	double getCargoWeightLimit() {
+		return cargoWeightLimit;
+	}
+
+	//Methods:
+	void display() {
+		Vehicle::display();
+		cout << "Cargo Weight Limit : " << cargoWeightLimit << endl;
+	}
+};
+
+//== Bus Class ==
+
+class Bus : public Vehicle{
+private:
+	//Attributes:
+	int numberOfPassengers;
+
+public:
+	Bus(string m, string rn, int s, double fc, double fcon, int p) :
+		Vehicle(m, rn, s, fc, fcon) 
+	{
+		numberOfPassengers = p;
+	}
+
+	//Setters:
+	void setNumberOfPassengers(int p) {
+		numberOfPassengers = p;
+	}
+
+	//Getters:
+	int getNumberOfPassengers() {
+		return numberOfPassengers;
+	}
+
+	//Methods:
+	void display() {
+		Vehicle::display();
+		cout << "Number Of Passengers : " << numberOfPassengers << endl;
+	}
+
+};
+
+//== Main ==
+
+int main() {
+
+	Vehicle v("Fiat", "123ab", 350, 10, 20);
+	v.display();
+	cout << "======================================\n";
+
+	Truck t("Buggati", "498b", 220, 70, 33, 44);
+	t.display();
+	cout << "======================================\n";
+
+
+	Bus b("BMW", "157we", 250, 310, 22, 200);
+	b.display();
+	cout << "======================================\n";
+
+}
+*/
+
+//==================== Task 2 ========================
+
+
+//== Circle Class ==
+
+/*
+class Circle {
+protected:
+	//Attributes:
+	double radius;
+	string color;
+
+public:
+	//Constructors:
+	Circle() {
+		radius = 1.0;
+		color = "red";
+	}
+	Circle(double r) {
+		radius = r;
+	}
+	Circle(double r, string c) {
+		radius = r;
+		color = c;
+	}
+
+	//Setters:
+	void setColor(string c) {
+		color = c;
+	}
+	void setRadius(double r) {
+		radius = r;
+	}
+
+	//Getters:
+	string getColor() {
+		return color;
+	}
+	double getRadius() {
+		return radius;
+	}
+
+	//Methods:
+	double getArea() {
+		return 3.14 * radius * radius;
+	}
+};
+
+//== Cylinder Class ==
+
+class Cylinder : public Circle {
+private:
+	//Attributes:
+	double height;
+
+public:
+	//Constructors:
+	Cylinder() {
+		height = 1.0;
+	}
+	Cylinder(double radius) : Circle(radius){
+		
+	}
+	Cylinder(double r, double h) :Circle(r) {
+		height = h;
+	}
+	Cylinder(double r, double h, string c) :Circle(r, c) {
+		height = h;
+	}
+	
+	//Setters:
+	void setHeight(double h) {
+		height = h;
+	}
+
+	//Getters:
+	double getHeight() {
+		return height;
+	}
+	
+	//Methods:
+	double getVolume() {
+		return getArea() * height;
+	}
+
+};
+
+//== Main ==
+
+int main() {
+	Cylinder c(10,2,"blue");
+	cout << "Area : " << c.getArea() << endl;
+	cout << "Volume : " << c.getVolume() << endl;
+}
+*/
+
+//==================== Task 3 ========================
+
+/*
+// == MyPoint class ==
+
+class MyPoint {
+private:
+	//Attributes:
+	int x, y;
+public:
+	//Constructors:
+	MyPoint() {
+		x = y = 0;
+	}
+	MyPoint(int p1,int p2) {
+		x = p1;
+		y = p2;
+	}
+
+	//Setters:
+	void setX(float p1) {
+		x = p1;
+	}
+	void setY(float p2) {
+		y = p2;
+	}
+
+	//Getters:
+	int getX() {
+		return x;
+	}
+	int getY() {
+		return y;
+	}
+};
+
+// == MyLine class ==
+
+class MyLine {
+private:
+	//Attributes:
+	MyPoint begin, end;
+public:
+	//Constructors:
+	MyLine() {
+
+	}
+	MyLine(int x1, int y1, int x2, int y2) {
+		begin.setX(x1);
+		begin.setY(y1);
+		end.setX(x2);
+		end.setY(y2);
+	}
+	MyLine(MyPoint b, MyPoint e) {
+		begin = b;
+		end = e;
+	}
+
+	//Setters:
+	void setBegin(MyPoint b) {
+		begin = b;
+	}
+	void setEnd(MyPoint e) {
+		end = e;
+	}
+
+	void setBeginX(int x) {
+		begin.setX(x);
+	}
+	void setBeginY(int y) {
+		begin.setY(y);
+	}
+	void setEndX(int x) {
+		end.setX(x);
+	}
+	void setEndY(int y) {
+		end.setY(y);
+	}
+
+	void setBeginXY(int x, int y) {
+		begin.setX(x);
+		setBeginY(y);
+	}
+	void setEndXY(int x, int y) {
+		end.setX(x);
+		setEndY(y);
+	}
+
+	//Getters:
+	MyPoint getBegin() {
+		return begin;
+	}
+	MyPoint getEnd() {
+		return end;
+	}
+	
+	int getBeginX() {
+		return begin.getX();
+	}
+	int getBeginY() {
+		return begin.getY();
+	}
+	int getEndX() {
+		return end.getX();
+	}
+	int getEndY() {
+		return end.getY();
+	}
+
+	int* getBeginXY() {
+		int beginXY[] = { begin.getX(), begin.getY() };
+		return beginXY;
+	}
+	int* getEndXY() {
+		int endXY[] = { end.getX(), end.getY() };
+		return endXY;
+	}
+
+	//Methods:
+	double getLength() {
+		//distance between the two points d=√((x2 – x1)² + (y2 – y1)²). 
+		double pw1 = pow(((double)end.getX() - (double)begin.getX()), 2);
+		double pw2 = pow(((double)end.getY() - (double)begin.getY()), 2);
+		double distance = sqrt(pw1+pw2);
+		return distance;
+	}
+	double getGradient() {
+		double tanAngle = ((double)end.getY() - (double)begin.getY()) / ((double)end.getX() - (double)begin.getX());
+		double m = atan(tanAngle);
+		return m;
+	}
+};
+
+//== Main ==
+
+int main() {
+
+	MyPoint k(1, 1);
+	MyPoint m(10, 5);
+
+	MyLine l(k, m);
+
+	int begin[2] = { l.getBeginXY()[0], l.getBeginXY()[1] };
+	cout << "line Begine = (" << begin[0] << ", " << begin[1] << ")" << endl;
+
+	int end[2] = { l.getEndXY()[0], l.getEndXY()[1] };
+	cout << "line End = (" << end[0] << ", " << end[1] << ")" << endl;
+
+	cout << "line length = " << l.getLength() << endl;
+	cout << "line gradient = " << l.getGradient() << endl;
+}
+*/
+
+//==================== Task 4 ========================
+
+//== MyComplex class ==
+
+/*
+class MyComplex {
+private:
+    //Attributes:
+    double mReal, mImag;
+public:
+	//Constructors:
+    MyComplex() {
+        mReal = 0;
+        mImag = 0;
+    }
+    MyComplex(double real, double imag) {
+        mReal = real;
+        mImag = imag;
+    }
+
+    //Setters:
+    void setReal(double real) { 
+		mReal = real; 
+	}
+    void setImag(double imag) { 
+		mImag = imag; 
+	}
+    void setValue(double real, double imag) {
+        mReal = real;
+        mImag = imag;
+    }
+
+    //Getters:
+    double getReal() { 
+		return mReal; 
+	}
+    double getImag() { 
+		return mImag; 
+	}
+
+    //Methods:
+    bool isReal() { 
+		if (mReal == 0)
+			return true;
+		else
+			return false;
+	}
+	bool isImg() {
+		if (mImag == 0)
+			return true;
+		else
+			return false;
+	}
+    bool equals(double real, double imag) {
+		if (mReal == real && mImag == imag)
+			return true;
+		else
+			return false;
+    }
+    bool equals(MyComplex another) {
+		if ((mReal == another.mReal) && (mImag = another.mImag))
+			return true;
+		else
+			return false;
+    }
+    double magnitude() { 
+		return sqrt(mReal * mReal + mImag * mImag); 
+	}
+    MyComplex addInto(MyComplex right) { 
+        mReal += right.mReal;
+        mImag += right.mImag;
+        return (*this);
+    }
+    MyComplex addNew(MyComplex right) {
+        MyComplex newComplex(mReal + right.mReal, mImag + right.mImag);
+        return newComplex;
+    }
+};
+
+//== Main ==
+
+int main() {
+    MyComplex c1(3.1, 7.2);
+    MyComplex c2(4, 5);
+
+	cout << "c1 = (" <<  c1.getReal() << ", " << c1.getImag() << ")" << endl;
+	cout << "c2 = (" << c2.getReal() << ", " << c2.getImag() << ")" << endl;
+
+	MyComplex c3 = c1.addNew(c2);
+	cout << "c3 = (" << c3.getReal() << ", " << c3.getImag() << ")" << endl;
+
+	MyComplex c4 = c1.addInto(c2);
+	cout << "c4 = (" << c4.getReal() << ", " << c4.getImag() << ")" << endl;
+}
+*/
+
+//==================== Task 5 ========================
+
+/*
+//== Point class ==
+
+class Point {
+protected:
+	//Attributes:
+	float x, y;
+public:
+	//Constructors:
+	Point() {
+		x = y = 0;
+	}
+	Point(float p1, float p2) {
+		x = p1;
+		y = p2;
+	}
+
+	//Setters:
+	void setX(float p1) {
+		x = p1;
+	}
+	void setY(float p2) {
+		y = p2;
+	}
+	void setXY(float p1, float p2) {
+		x = p1;
+		y = p2;
+	}
+
+	//Getters:
+	float getX() {
+		return x;
+	}
+	float getY() {
+		return y;
+	}
+	
+	//Methods:
+	float* getXY() {
+		float point[] = { x,y };
+		return point;
+	}
+};
+
+//== MovablePoint class ==
+
+class MovablePoint : public Point {
+private:
+	//Attributes:
+	float xSpeed, ySpeed;
+public:
+	//Constructors:
+	MovablePoint() {
+		xSpeed = ySpeed = 0;
+	}
+	MovablePoint(float p1, float p2, float xS, float yS) : Point(p1,p2) {
+		xSpeed = xS;
+		ySpeed = yS;
+	}
+	MovablePoint(float xS, float yS){
+		xSpeed = xS;
+		ySpeed = yS;
+	}
+
+	//Setters:
+	void setXSpeed(float xS) {
+		xSpeed = xS;
+	}
+	void setYSpeed(float yS) {
+		ySpeed = yS;
+	}
+	void setSpeed(float xS, float yS) {
+		xSpeed = xS;
+		ySpeed = yS;
+	}
+
+	//Getters:
+	float getXSpeed() {
+		return xSpeed;
+	}
+	float getYSpeed() {
+		return ySpeed;
+	}
+	
+	//Methods:
+	float* getSpeed() {
+		float speed[] = { xSpeed,ySpeed };
+		return speed;
+	}
+	MovablePoint move() {
+		setX(getX() + xSpeed);
+		setY(getY() + ySpeed);
+		return (*this);
+	}
+};
+
+//== Main ==
+
+
+int main() {
+	Point p(1, 1);
+	MovablePoint mp(1, 1, 5, 5);
+
+	float speed[2] = { mp.getSpeed()[0], mp.getSpeed()[1] };
+	cout << speed[0] << " " << speed[1];
+}
+*/
+
+//================== Task 6 =========================
+
+/*
+Difference between composition vs inheritance with example by
+code
+
+Both composition and inheritance are object - oriented programming concepts.
+
+Composition  implement has - a relationship between objects.
+
+Inheritance  implement is - a relationship between objects.
+
+
+(example)
+if we have a class called vehicle
+
+vehicle has an engine, a tire     --->  (has a) relationship, This is called composition
+when we use class engine or tire  --->  we make an object from it inside the class of vehicle
+
+if we make another class called car ---> car is a vehicle, (is a)relationship, this is called inheritance
+
+class tire {
+
+};
+
+class engine {
+
+};
+
+class vehicle{
+	tire t;                   //composition
+	engine e;                 //composition
+};
+
+class car : public vehicle{   //inheritance
+
+};
+*/

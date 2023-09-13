@@ -1,0 +1,529 @@
+#include <iostream>
+using namespace std;
+
+
+// ====  Assignment 1 Solution ====
+
+/*
+Task 1 : 
+========
+Write a program that takes an integer 
+from user then print it.
+
+Example
+Input 5
+Output 5
+*/
+
+/*
+int main() {
+	cout << "Please Enter a number : \n";
+	int num;
+	cin >> num;
+	cout << "Your number is : " << num << endl;
+}
+*/
+
+//===============================================
+
+/*
+Task 2 :
+========
+write a program that ask the user to 
+insert 3 numbers then print the sum.
+
+Input
+Please enter first number:
+5
+Please enter second number
+3
+Please enter third number
+4
+Output
+Summation of 3 integers is 12
+*/
+
+/*
+int main() {
+	cout << "Please Enter 3 numbers : \n";
+	int num1,num2,num3,sum;
+	cin >> num1>>num2>>num3;
+	sum = num1 + num2 + num3;
+	cout << "Sum =  " << sum << endl;
+}
+*/
+
+
+//===============================================
+
+/*
+Task 3 :
+========
+write a program that ask the user to 
+insert 3 integers then print the average as
+decimal number
+
+Input
+Please enter first number:
+6
+Please enter second number
+4
+Please enter third number
+4
+Output
+The average = 4.66667
+*/
+
+/*
+int main() {
+	cout << "Please Enter 3 numbers : \n";
+	int num1,num2,num3;
+	float avg;
+	cin >> num1>>num2>>num3;
+	avg = (float)(num1 + num2 + num3)/3;
+	cout << "Avg =  " << avg << endl;
+}
+*/
+
+//===============================================
+
+/*
+Task 4 :
+========
+Write a program to compute the perimeter 
+and area of a rectangle. Your code
+should ask the user to insert the width 
+and the height
+
+Input(example)
+Width = 5
+Height = 3
+Output
+The perimeter = 16
+The area = 15
+*/
+
+/*
+int main() {
+	cout << "Please Enter width and height :\n";
+	int width, height;
+	cin >> width >> height;
+	int perimeter = 2 * (width + height);
+	int  area = width * height;
+	cout << "Perimeter = " << perimeter << endl;
+	cout << "Area = " << area << endl;
+}
+*/
+
+//===============================================
+
+/*
+Task 5 :
+========
+Write a program to calculate the sum of 
+the digits of a 3-digit number.
+
+Input :  132
+Output : 6
+*/
+
+/*
+int main() {
+	cout << "Please Enter Number :\n";
+	int num, sum{};
+	cin >> num;
+
+	
+	sum += num % 10;
+	num /= 10;
+
+	sum += num % 10;
+	num /= 10;
+
+	sum += num % 10;
+	num /= 10;
+
+	cout << "Sum of Digits = " << sum << endl;
+}
+*/
+
+
+//===============================================
+
+/*
+Task 6 :
+========
+Write a program to convert a given integer 
+(in seconds) to hours,
+minutes and seconds.
+Input seconds: 25300
+Expected Output: H:M:S - 7:1:40
+*/
+
+/*
+int main() {
+	cout << "Please Enter Number :\n";
+	int seconds;
+	cin >> seconds;
+	
+	int hours = seconds / (3600);
+	int mins = (seconds % (3600)) / 60;
+	int sec = seconds - hours * 3600 - mins * 60;
+
+	cout << hours << ":" << mins << ":" << sec << endl;
+
+}
+*/
+
+//===============================================
+
+/*
+Task 7 :
+========
+Write a program that allows the user to insert 
+an integer then print negative if it
+is a negative number otherwise print positive.
+
+Example
+Input -5
+Output negative
+Example2
+Input 10
+Output positive
+*/
+
+/*
+int main() {
+	int number;
+	cout << "Enter number : \n";
+	cin >> number;
+
+	if (number > 0) 
+		cout << "positive\n";
+	else if (number < 0) 
+		cout << "negative\n";
+	else 
+		cout << "zero\n";
+}
+*/
+
+//===============================================
+
+/*
+Task 8 :
+========
+Write a program to read any digit from 1 to 5, display it as a word
+ex : input: 4, output: four
+*/
+
+/*
+int main() {
+	int number;
+	cout << "Enter Number : \n";
+	cin >> number;
+	
+	if (number == 1) 
+		cout << "one\n";
+	else if (number == 2) 
+		cout << "Two\n";
+	else if (number == 3) 
+		cout << "Three\n";
+	else if (number == 4) 
+		cout << "Four\n";
+	else if (number == 5) 
+		cout << "Five\n";
+	
+}
+*/
+
+//===============================================
+
+/*
+Task 9 :
+========
+Write a program that reads 5 numbers and sum 
+of all odd values between them.
+
+● Test Data :11  17 13 12 5
+● Expected Output:  Sum of all odd values: 46
+
+*/
+
+/*
+int main() {
+	int number1, number2, number3, number4, number5, sum = 0;
+	cout << "Enter Numbers : \n";
+	cin >> number1 >> number2 >> number3 >> number4 >> number5;
+	
+	if (number1 % 2 != 0) 
+		sum += number1;
+	if (number2 % 2 != 0) 
+		sum += number2;
+	if (number3 % 2 != 0) 
+		sum += number3;
+	if (number4 % 2 != 0) 
+		sum += number4;
+	if (number5 % 2 != 0) 
+		sum += number5;
+
+	cout << "sum of all odd numbers = " << sum << endl;
+}
+*/
+
+//===============================================
+
+/*
+Task 10 :
+========
+.Write a program that reads a year then 
+ check if a year is a leap year or not: 
+ a leap year is divisible by 400 or 4 only
+*/
+
+/*
+int main() {
+	int year;
+	cout << "Enter year : \n";
+	cin >> year;
+
+	if (year % 400 == 0 || year % 4 == 0) 
+		cout << "leap year\n";
+	else 
+		cout << "NOT leap year\n";
+}
+*/
+
+//===============================================
+
+/*
+Task 11 :
+========
+. take the birth year and check if he is 
+  above 18 or not
+*/
+
+/*
+int main() {
+	int birthYear;
+	cout << "Enter Birth year : \n";
+	cin >> birthYear;
+	if (birthYear > 18) 
+		cout << "above 18\n";
+	else 
+		cout << "NOT above 18\n";
+}
+*/
+
+//===============================================
+
+/*
+Task 12 :
+========
+. A school has following rules for grading system:
+a. Below 25 - F
+b. 25 to 45 - E
+c. 45 to 50 - D
+d. 50 to 60 - C
+e. 60 to 80 - B
+f. Above 80 - A
+Ask the user to enter marks and print the 
+corresponding grade.
+*/
+
+/*
+int main() {
+	int grade;
+	cout << "Enter grade : ";
+	cin >> grade;
+	if (grade > 80) 
+		cout << "A";
+	else if (grade <= 80 && grade >= 60) 
+		cout << "B";
+	else if (grade < 60 && grade >= 50) 
+		cout << "C";
+	else if (grade < 50 && grade >= 45) 
+		cout << "D";
+	else if (grade < 45 && grade >= 25) 
+		cout << "E";
+	else 
+		cout << "F";
+}
+*/
+
+//===============================================
+
+/*
+Task 13 :
+========
+. Search for Switch Case and use it to write a 
+  program that reads an integer between 1 and 12 
+  and print the month of the year in English.
+
+● Test Data :
+  Insert a number between 1 to 12 to get the month 
+  name: 8
+● Expected Output: August
+*/
+
+/*
+int main() {
+	int month;
+	cout << "month : ";
+	cin >> month;
+	switch (month) {
+	case 1:
+		cout << "January";
+		break;
+	case 2:
+		cout << "February";
+		break;
+	case 3:
+		cout << "March";
+		break;
+	case 4:
+		cout << "April";
+		break;
+	case 5:
+		cout << "May";
+		break;
+	case 6:
+		cout << "June";
+		break;
+	case 7:
+		cout << "July";
+		break;
+	case 8:
+		cout << "August";
+		break;
+	case 9:
+		cout << "September";
+		break;
+	case 10:
+		cout << "October";
+		break;
+	case 11:
+		cout << "November";
+		break;
+	case 12:
+		cout << "December";
+		break;
+	default:
+		cout << "Invalid month\n";
+		break;
+	}
+}
+*/
+
+
+//===============================================
+
+/*
+Task 14 :
+========
+. Search for ternary operator and use it to write
+  a program that allows the user to insert integer 
+  number then Even or Odd
+● Example  Input 8  Output even
+● Example 2 Input 7 Output odd
+*/
+
+/*
+int main() {
+
+	int number;
+	cout << "Enter number : ";
+	cin >> number;
+
+	number % 2 == 0 ? cout << "Even\n" : cout << "Odd\n";
+
+}
+*/
+
+
+//===============================================
+
+/*
+Task 15 :
+========
+. Write a program that take character from user 
+  then if it is vowel chars (a,e,I,o,u)
+  then print vowel otherwise print consonant
+● Example   Input o  Output vowel
+● Example 2 Input b Output consonant
+*/
+
+/*
+int main() {
+	char c;
+	cout << "Enter character : ";
+	cin >> c;
+	if (c == 'a' || c == 'A' || c == 'e' || c == 'E' 
+		|| c == 'o' || c == 'O' || c == 'i' 
+		|| c == 'I' || c == 'u' || c == 'U') {
+		cout << "Vowel\n";
+	}
+	else {
+		cout << "Constant\n";
+	}
+}
+*/
+
+/*
+
+
+//===============================================
+
+/*
+Task 16 :
+========
+. Write a program that take 3 integer from user 
+  then print the max element and
+  the min element.
+● Example
+Input 7 8 5
+Output
+max element = 8
+min element = 5
+● Example2
+Input 3 6 9
+Output
+Max element = 9
+Min element = 3
+*/
+
+/*
+int main() {
+	
+	int number1, number2, number3, max{}, min{};
+	cout << "Enter 3 numbers : \n";
+	cin >> number1 >> number2 >> number3;
+	
+	if (number1 > number2 && number1 > number3) {
+		max = number1;
+	}
+	else if (number2 > number1 && number2 > number3) {
+		max = number2;
+	}
+	else {
+		max = number3;
+	}
+
+	if (number1 < number2 && number1 < number3) {
+		min = number1;
+	}
+	else if (number2 < number1 && number2 < number3) {
+		min = number2;
+	}
+	else {
+		min = number3;
+	}
+
+	cout << "Max : " << max << endl;
+	cout << "Min : " << min << endl;
+}
+*/
+
+
+
+
+

@@ -1,0 +1,331 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+//=============== OOP - Assignment 6 Solution ==========
+//Ex 1:
+/*
+class Circle {
+private:
+	//Attributes:
+	double radius;
+	string color;
+public:
+	//Constructors:
+	Circle() {
+		radius = 1.0;
+		color = "red";
+	}
+	Circle(double r, string c) {
+		radius = r;
+		color = c;
+	}
+	
+	//Setters:
+	void setColor(string c) {
+		color = c;
+	}
+	void setRadius(double r) {
+		radius = r;
+	}
+
+	//Getters:
+	string getColor() {
+		return color;
+	}
+	double getRadius() {
+		return radius;
+	}
+
+	//Methods:
+	double getArea() {
+		return 3.14 * radius * radius;
+	}
+};
+	
+int main() {
+	Circle c(100, "Blue");
+	cout << "Radius : " << c.getRadius() << endl;
+	cout << "Color : " << c.getColor() << endl;
+}
+*/
+
+// =====================================================
+
+// Ex2:
+
+/*
+class Employee {
+private:
+	//Attributes:
+	int id;
+	int salary;
+	string firstName;
+	string lastName;
+public:
+	//Constructors:
+	Employee() {
+		id = 0;
+		salary = 0;
+		firstName = "";
+		lastName = "";
+	}
+	Employee(int i, string fn, string ln, int s) {
+		id = i;
+		salary = s;
+		firstName = fn;
+		lastName = ln;
+	}
+
+	//Setters:
+	void setId(int i) {
+		id = i;
+	}
+	void setSalary(int s) {
+		salary = s;
+	}
+	void setFirstName(string fn) {
+		firstName = fn;
+	}
+	void setLastName(string ln) {
+		lastName = ln;
+	}
+
+	//Getters
+	int getId() {
+		return id;
+	}
+	int getSalary() {
+		return salary;
+	}
+	string getFirstName() {
+		return firstName;
+	}
+	string getLastName() {
+		return lastName;
+	}
+	string getName() {
+		string fullName = firstName + " " + lastName;
+		return fullName;
+	}
+	
+	//Methods
+	int getAnnualSalary() {
+		return salary * 12;
+	}
+	int raiseSalary(int percent) {
+		return (salary + (salary * percent * 0.01));
+	}
+};
+
+//Main
+int main() {
+	
+	Employee e(123, "Ahmed", "Ali", 1000);
+	cout << "Name : " << e.getName() << endl;
+	cout << "ID : " << e.getId() << endl;
+	cout << "Salary : " << e.getSalary() << endl;
+	cout << "Annual Salary : " << e.getAnnualSalary() << endl;
+	cout << "Raise Salary : " << e.raiseSalary(50) << endl;
+		
+}
+*/
+
+// =====================================================
+
+//EX3:
+
+/*
+class Account
+{
+private:
+	string id;
+	string name;
+	int balance = 0;
+
+public:
+	//Con:
+	Account(string n, string i){
+		name = n;
+		id = i;
+	}
+	Account(string n, string i, int b){
+		name = n;
+		id = i;
+		balance = b;
+	}
+
+	//Setters:
+	void setBalance(int b){
+		balance = b;
+	}
+	string getName(){
+		return name;
+	}
+	string getId(){
+		return id;
+	}
+
+	//Getters:
+	int getBalance(){
+		return balance;
+	}
+	int credit(int amount){
+		balance += amount;
+		return balance;
+	}
+	int debit(int amount){
+		if (amount <= balance){
+			balance -= amount;
+		}
+		else{
+			cout << "amount exceeded";
+		}
+		return balance;
+	}
+
+	int transfereTo(Account &a, int amount){
+		if (amount <= balance){
+			a.credit(amount);
+			balance -= amount;
+		}
+		else{
+			cout << "Amount exceeded";
+		}
+		return balance;
+	}
+};
+
+//main:
+int main(){
+	Account a("ahmed", "112d5", 2000);
+	Account b("mohammed", "122d5", 3000);
+	cout << "Hi " << a.getName() << " Your balance is : " << a.getBalance() << endl;
+
+	cout << "\nEnter amount you will add : \n";
+	int x;
+	cin >> x;
+	cout << "\nNow your balance is : " << a.credit(x) << endl;
+
+	cout << "\nEnter amount you will withdraw : \n";
+	int y;
+	cin >> y;
+	cout << "\nNow your balance is : " << a.debit(y) << endl;
+
+	cout << "\nMohamed Balance : " << b.getBalance() << endl;
+
+	cout << "\nEnter amount you will transfer : \n";
+	int z;
+	cin >> z;
+	cout << "\nNow your balance is : " << a.transfereTo(b, z) << endl;
+
+	cout << "\nMohamed Balance : " << b.getBalance() << endl;
+}
+*/
+
+//============================================================================
+
+//EX4:
+
+/*
+class Time
+{
+	//Attributes:
+private:
+	int hour;
+	int minute;
+	int sec;
+
+public:
+	//Con:
+	Time(){
+		hour = 0;
+		minute = 0;
+		sec = 0;
+	}
+	Time(int h, int m, int s){
+		hour = h;
+		minute = m;
+		sec = s;
+	}
+
+	//Setters:
+	void setHour(int h){
+		hour = h;
+	}
+	void setMin(int m){
+		minute = m;
+	}
+	void set_sec(int s){
+		sec = s;
+	}
+	void setTime(int h, int m, int s) {
+		hour = h;
+		minute = m;
+		sec = s;
+	}
+
+	//Getters:
+	int getHour(){
+		return hour;
+	}
+	int getMin(){
+		return minute;
+	}
+	int getSec(){
+		return sec;
+	}
+
+	//Methods:
+	Time nextSecond() {
+		Time t = Time(hour, minute, sec);
+		sec++;
+		if (sec >= 60) {
+			minute++;
+			sec = 0;
+		}
+		if (minute >= 60) {
+			hour++;
+			minute = 0;
+		}
+		if (hour >= 24){
+			hour = 0;
+		}
+		return t;
+	}
+	Time prevSecond() {
+		Time t = Time(hour, minute, sec);
+		sec--;
+		if (sec <= 0) {
+			minute--;
+			sec = 59;
+		}
+		if (minute <= 0) {
+			hour--;
+			minute = 59;
+		}
+		if (hour <= 0) {
+			hour = 23;
+		}
+		return t;
+	}
+
+};
+
+//main:
+
+int main() {
+	Time t1(23, 59, 59) ;
+	cout << t1.getHour() << " : " << t1.getMin() << " : " << t1.getSec() << endl;
+	t1.nextSecond();
+	cout << t1.getHour() << " : " << t1.getMin() << " : " << t1.getSec() << endl;
+
+	cout << "\n==================\n";
+
+	Time t2(0, 0, 0);
+	cout << t2.getHour() << " : " << t2.getMin() << " : " << t2.getSec() << endl;
+	t2.prevSecond();
+	cout << t2.getHour() << " : " << t2.getMin() << " : " << t2.getSec() << endl;
+}
+*/
+

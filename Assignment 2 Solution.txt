@@ -1,0 +1,283 @@
+#include <iostream>
+using namespace std;
+
+// ======== Assignment 2 Solution =======
+
+/*
+1.
+
+Write a program that print from 10 to 1
+Output:
+10 9 8 7 6 5 4 3 2 1
+*/
+
+/*
+int main() {
+	for (int i = 10; i >= 1; i--) {
+		cout << i << " ";
+	}
+}
+*/
+
+//======================================
+/*
+2.
+
+Write a program to read 10 numbers from 
+the user then print the average.
+Example
+Input 5 3 2 6 7 1 10 9 8 4
+Output 5.5
+*/
+
+/*
+int main() {
+	int number, sum = 0;
+	for (int i = 1; i <= 10; i++){
+		cin >> number;
+		sum += number;
+	}
+	cout << "Avg = "<<sum / 10.0 << endl;
+	
+}
+*/
+
+//======================================
+/*
+3.
+
+Write a program i to display the 
+multiplication table of a given integer
+Example
+Input 5
+Output
+1 * 5 = 5
+2 * 5 = 10
+...
+...
+12 * 5 = 60
+*/
+
+/*
+int main() {
+		
+	int number;
+	cin >> number;
+	for (int i = 1; i <= 12; i++) {
+		cout << i << " * " << number << " = " << number * i << endl;
+	}
+}
+*/
+
+//======================================
+/*
+4.
+
+Write a program that allows the user 
+to insert two integers N and M and 
+print the summation of all numbers 
+between N and M.
+Example:
+input: 5 8.
+output : 26.
+*/
+
+/*
+int main() {
+		
+	int number1, number2, sum = 0;
+	cin >> number1 >> number2;
+	for (int i = number1; i <= number2; i++) {
+		sum += i;
+	}
+	cout << "Sum = " << sum << endl;
+}
+*/
+
+//======================================
+/*
+5.
+
+Write a program that allows the user 
+to insert infinite integers until 
+insert negative number then print 
+summation of all integers
+Example
+Input 5 7 8 3 2 - 1
+Output 25
+*/
+
+/*
+int main() {
+	int number = 0, sum = 0;
+	for (; number >= 0;) {
+		cin >> number;
+		sum += number;
+	}
+	cout << "Sum = " << sum << endl;
+}
+*/
+
+//======================================
+/*
+6.
+
+Write a program that allows the user 
+to insert infinite integers until 
+insert negative number then print 
+the max integer.
+Example
+Input 5 3 8 7 9 4 - 1
+Output 9
+*/
+
+/*
+int main() {
+	int number = 0, max = 0;
+	for (; number >= 0;) {
+		cin >> number;
+		if (number > max) 
+			max = number;
+	}
+	cout << "Max = " << max << endl;
+}
+*/
+
+//======================================
+/*
+7.
+
+Enter Number and Count the number 
+of steps required to make the Number
+equal to Zero.
+->if Number is Odd decrease one from it
+->If Number is Even divide it by 2
+Example:
+Input:15 Output : 7
+
+*/
+
+/*
+int main() {
+	int number, step = 0;
+	cin >> number;
+	for (; number > 0;) {
+		if (number % 2 == 0) 
+			number /= 2;
+		else 
+			number -= 1;
+		step++;
+	}
+	cout << "Steps to make num zero = " << step << endl;
+		
+}
+*/
+
+//======================================
+/*
+8. 
+
+Write a program to find the power 
+of a number.
+Input
+Input base : 2
+Input exponent : 5
+Output :
+	2 ^ 5 = 32
+
+*/
+
+/*
+int main() {
+	int base, exponent, res = 1;
+	cout << "Base : ";
+	cin >> base;
+	cout << "Exponent : ";
+	cin >> exponent;
+	for (int i = 1; i <= exponent ; i++) {
+		res *= base;
+	}
+	cout << base << "^" << exponent << " = " <<  res << endl;
+	
+}
+*/
+	 
+//======================================
+/*
+9. 
+
+Write a program to take 10 numbers from 
+the user and count the odd numbers .
+Example :
+Input : 5 8 3 11  6 4 2 7 1 9
+Output : 7
+*/
+
+/*
+int main() {
+	int number, count = 0;
+	for (int i = 1; i <= 10; i++){
+		cin >> number;
+		if (number % 2 != 0) 
+			count++;
+	}
+	cout << "Num of Odds = " <<  count << endl;
+}
+*/
+ 
+//======================================
+/*
+10. 
+
+Write a program to take 2 integers from 
+the user and find the Greatest Common
+Divisor of two numbers.
+Example :
+Input : 25 15
+Output : 5
+*/
+
+/*
+int main() {
+	
+	int number1, number2, gcd = 0;
+	cout << "Enter two numbers : \n";
+	cin >> number1 >> number2;
+	
+	for (int i = 1; i <= number1 && i <= number2 ; i++){
+		if (number1 % i == 0 && number2 % i == 0) {
+			gcd = i;
+		}
+	}
+
+	cout << "GCD = " <<  gcd << endl;
+
+}
+*/
+
+//======================================
+/*
+11. 
+
+Write a program to take 10 numbers from 
+the user and find the second max.
+Example :
+Input : 5 8 3 11  6 4 2 7 1 9
+Output : 9
+*/
+
+/*
+int main() {
+	int number = 0 ,max = INT_MIN, secondMax = INT_MIN;
+	for (int i = 1; i <= 10; i++) {
+		cin >> number;
+		if (number > max) {
+			secondMax = max;
+			max = number;	
+		}
+		if (number < max && number > secondMax) 
+			secondMax = number;
+	}
+	cout << "Sec Max = " << secondMax << endl;
+}
+*/
